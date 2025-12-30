@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Health condition based diet guidance for women including PCOS, anemia, thyroid, and pregnancy." />
+  <title>Health-Based Diet Plan | NutriShe</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <div class="container header-container">
+      <h1 class="logo">
+        <a href="index.html">NutriShe</a>
+      </h1>
+
+      <nav class="navbar">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="plans.html" class="active">Plans</a></li>
+          <li><a href="guide.html">Guide</a></li>
+          <li><a href="tips.html">Tips</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= MAIN ================= -->
+  <main>
+
+    <!-- ===== INTRO ===== -->
+    <section class="health-intro">
+      <div class="container">
+        <h2>Diet Plan by Health Condition</h2>
+        <p>
+          Select a health condition to view general nutrition guidance.
+          This information is for awareness and healthy lifestyle support only.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== HEALTH SELECTION ===== -->
+    <section class="health-selection">
+      <div class="container health-grid">
+
+        <button class="health-card" onclick="showHealthPlan('pcos')">
+          PCOS
+        </button>
+
+        <button class="health-card" onclick="showHealthPlan('anemia')">
+          Anemia
+        </button>
+
+        <button class="health-card" onclick="showHealthPlan('thyroid')">
+          Thyroid
+        </button>
+
+        <button class="health-card" onclick="showHealthPlan('pregnancy')">
+          Pregnancy
+        </button>
+
+      </div>
+    </section>
+
+    <!-- ===== RESULT AREA ===== -->
+    <section class="health-result">
+      <div class="container" id="healthResult">
+        <p>Select a condition to view diet guidance.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>
+        © 2025 NutriShe. This website provides general nutrition guidance and is not a medical service.
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

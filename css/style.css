@@ -267,3 +267,83 @@ textarea:focus {
     font-size: 2rem;
   }
 }
+/* ===============================
+   AGE CALCULATOR SECTION
+   =============================== */
+.age-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.age-card {
+  padding: 1rem;
+  border-radius: 8px;
+  border: 2px solid var(--primary-green);
+  background-color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.age-card:hover {
+  background-color: var(--secondary-green);
+}
+
+.age-result {
+  margin-top: 2rem;
+}
+/* ===============================
+   HEALTH PLAN SECTION
+   =============================== */
+   .health-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.health-card {
+  padding: 1rem;
+  border-radius: 8px;
+  border: 2px solid var(--primary-green);
+  background-color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.health-card:hover {
+  background-color: var(--secondary-green);
+}
+
+.health-result {
+  margin-top: 2rem;
+}
+/* ===============================
+   GOAL-BASED DIET PLAN SECTION
+   =============================== */
+   .goal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.goal-card {
+  padding: 1rem;
+  border-radius: 8px;
+  border: 2px solid var(--primary-green);
+  background-color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.goal-card:hover {
+  background-color: var(--secondary-green);
+}
+
+.goal-result {
+  margin-top: 2rem;
+}
+
+  
