@@ -221,3 +221,35 @@ function showGoalPlan(goal) {
 
   result.innerHTML = content;
 }
+/* =========================================
+   Custom Diet Plan Logic
+   ========================================= */
+const customForm = document.getElementById("customPlanForm");
+
+if (customForm) {
+  customForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const age = document.getElementById("age").value;
+    const goal = document.getElementById("goal").value;
+    const diet = document.getElementById("diet").value;
+    const condition = document.getElementById("condition").value;
+
+    const result = document.getElementById("customResult");
+
+    result.innerHTML = `
+      <h3>Your Custom Diet Summary</h3>
+      <ul>
+        <li><strong>Age:</strong> ${age}</li>
+        <li><strong>Goal:</strong> ${goal}</li>
+        <li><strong>Diet Preference:</strong> ${diet}</li>
+        <li><strong>Health Consideration:</strong> ${condition}</li>
+      </ul>
+      <p>
+        Focus on balanced meals, regular eating habits, and staying hydrated.
+        Adjust food choices based on your preferences and lifestyle.
+      </p>
+      <p><strong>Note:</strong> This is general guidance and not medical advice.</p>
+    `;
+  });
+}

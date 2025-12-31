@@ -345,5 +345,19 @@ textarea:focus {
 .goal-result {
   margin-top: 2rem;
 }
+/* ===============================
+   CUSTOM DIET PLAN SECTION
+   =============================== */
+.custom-form {
+  max-width: 500px;
+  margin: auto;
+  background-color: var(--bg-light);
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.custom-result {
+  margin-top: 2rem;
+}
 
   
