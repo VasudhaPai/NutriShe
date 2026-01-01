@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="Create a custom diet plan tailored to your age, lifestyle, preferences, and health needs." />
+    content="Create a personalized diet plan based on age, goals, preferences, allergies, and lifestyle." />
   <title>Custom Diet Plan | NutriShe</title>
 
   <link rel="stylesheet" href="css/style.css" />
@@ -16,9 +16,7 @@
   <!-- ================= HEADER ================= -->
   <header class="site-header">
     <div class="container header-container">
-      <h1 class="logo">
-        <a href="index.html">NutriShe</a>
-      </h1>
+      <h1 class="logo"><a href="index.html">NutriShe</a></h1>
 
       <nav class="navbar">
         <ul class="nav-links">
@@ -36,30 +34,30 @@
   <!-- ================= MAIN ================= -->
   <main>
 
-    <!-- ===== INTRO ===== -->
     <section class="custom-intro">
       <div class="container">
         <h2>Create Your Custom Diet Plan</h2>
         <p>
-          Fill in the details below to receive general diet guidance
-          tailored to your lifestyle and preferences.
+          Provide a few details to receive general diet guidance tailored
+          to your lifestyle and preferences.
         </p>
       </div>
     </section>
 
-    <!-- ===== FORM ===== -->
     <section class="custom-form-section">
       <div class="container">
 
         <form id="customPlanForm" class="custom-form">
 
+          <!-- Age -->
           <div class="form-group">
             <label for="age">Age</label>
-            <input type="number" id="age" placeholder="Enter your age" required />
+            <input type="number" id="age" min="10" required />
           </div>
 
+          <!-- Goal -->
           <div class="form-group">
-            <label for="goal">Fitness Goal</label>
+            <label for="goal">Goal</label>
             <select id="goal" required>
               <option value="">Select goal</option>
               <option value="weight loss">Weight Loss</option>
@@ -68,18 +66,31 @@
             </select>
           </div>
 
+          <!-- Diet Preference -->
           <div class="form-group">
             <label for="diet">Diet Preference</label>
             <select id="diet" required>
-              <option value="">Select preference</option>
+              <option value="">Select diet</option>
               <option value="vegetarian">Vegetarian</option>
-              <option value="non-vegetarian">Non-Vegetarian</option>
               <option value="vegan">Vegan</option>
+              <option value="non-vegetarian">Non-Vegetarian</option>
             </select>
           </div>
 
+          <!-- Activity Level -->
           <div class="form-group">
-            <label for="condition">Health Consideration</label>
+            <label for="activity">Activity Level</label>
+            <select id="activity" required>
+              <option value="">Select level</option>
+              <option value="sedentary">Sedentary</option>
+              <option value="moderate">Moderately Active</option>
+              <option value="active">Active</option>
+            </select>
+          </div>
+
+          <!-- Health Condition -->
+          <div class="form-group">
+            <label for="condition">Health Condition</label>
             <select id="condition">
               <option value="none">None</option>
               <option value="pcos">PCOS</option>
@@ -88,8 +99,20 @@
             </select>
           </div>
 
+          <!-- Allergies -->
+          <div class="form-group">
+            <label>Food Allergies</label>
+            <div class="checkbox-group">
+              <label><input type="checkbox" value="dairy"> Dairy</label>
+              <label><input type="checkbox" value="nuts"> Nuts</label>
+              <label><input type="checkbox" value="gluten"> Gluten</label>
+              <label><input type="checkbox" value="eggs"> Eggs</label>
+              <label><input type="checkbox" value="soy"> Soy</label>
+            </div>
+          </div>
+
           <button type="submit" class="btn-primary">
-            Generate Plan
+            Generate Custom Plan
           </button>
 
         </form>
@@ -97,7 +120,7 @@
       </div>
     </section>
 
-    <!-- ===== RESULT ===== -->
+    <!-- RESULT -->
     <section class="custom-result">
       <div class="container" id="customResult">
         <p>Your personalized diet guidance will appear here.</p>
@@ -106,11 +129,10 @@
 
   </main>
 
-  <!-- ================= FOOTER ================= -->
   <footer class="site-footer">
     <div class="container footer-content">
       <p>
-        © 2025 NutriShe. This website provides general nutrition guidance and is not a medical service.
+        © 2025 NutriShe. This website provides general nutrition guidance and is not medical advice.
       </p>
     </div>
   </footer>

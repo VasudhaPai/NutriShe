@@ -348,16 +348,17 @@ textarea:focus {
 /* ===============================
    CUSTOM DIET PLAN SECTION
    =============================== */
-.custom-form {
-  max-width: 500px;
-  margin: auto;
-  background-color: var(--bg-light);
-  padding: 2rem;
-  border-radius: 8px;
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
 }
 
-.custom-result {
-  margin-top: 2rem;
+.checkbox-group label {
+  font-weight: normal;
 }
+
+
 
   

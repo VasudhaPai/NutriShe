@@ -222,34 +222,89 @@ function showGoalPlan(goal) {
   result.innerHTML = content;
 }
 /* =========================================
-   Custom Diet Plan Logic
+   Advanced Custom Diet Plan Logic
    ========================================= */
+
 const customForm = document.getElementById("customPlanForm");
 
 if (customForm) {
   customForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const age = document.getElementById("age").value;
+    const age = parseInt(document.getElementById("age").value);
     const goal = document.getElementById("goal").value;
     const diet = document.getElementById("diet").value;
+    const activity = document.getElementById("activity").value;
     const condition = document.getElementById("condition").value;
 
-    const result = document.getElementById("customResult");
+    const allergyChecks = document.querySelectorAll(
+      'input[type="checkbox"]:checked'
+    );
+    const allergies = Array.from(allergyChecks).map(cb => cb.value);
 
-    result.innerHTML = `
-      <h3>Your Custom Diet Summary</h3>
+    /* ---------- AGE GUIDANCE ---------- */
+    let ageAdvice = "";
+    if (age < 20) {
+      ageAdvice = "Focus on growth-supporting foods with adequate calcium and iron.";
+    } else if (age <= 35) {
+      ageAdvice = "Maintain balanced meals with sufficient protein and energy.";
+    } else if (age <= 50) {
+      ageAdvice = "Prioritize fiber-rich foods and metabolism-friendly meals.";
+    } else {
+      ageAdvice = "Choose easy-to-digest foods and focus on bone health.";
+    }
+
+    /* ---------- GOAL GUIDANCE ---------- */
+    let goalAdvice = "";
+    if (goal === "weight loss") {
+      goalAdvice = "Focus on portion control and high-fiber foods.";
+    } else if (goal === "weight gain") {
+      goalAdvice = "Include healthy fats and regular nutrient-dense meals.";
+    } else {
+      goalAdvice = "Aim for balanced and consistent eating habits.";
+    }
+
+    /* ---------- ACTIVITY GUIDANCE ---------- */
+    let activityAdvice = "";
+    if (activity === "sedentary") {
+      activityAdvice = "Avoid frequent snacking and monitor portion sizes.";
+    } else if (activity === "moderate") {
+      activityAdvice = "Maintain regular meals with balanced nutrients.";
+    } else {
+      activityAdvice = "Ensure adequate protein intake and hydration.";
+    }
+
+    /* ---------- HEALTH NOTES ---------- */
+    let healthNote = "";
+    if (condition === "pcos") {
+      healthNote = "Prefer low-sugar, high-fiber foods.";
+    } else if (condition === "anemia") {
+      healthNote = "Include iron-rich foods and vitamin C sources.";
+    } else if (condition === "pregnancy") {
+      healthNote = "Focus on nutrient-dense meals and consult professionals.";
+    }
+
+    /* ---------- ALLERGY MESSAGE ---------- */
+    let allergyNote = allergies.length
+      ? `Avoid foods containing: ${allergies.join(", ")}.`
+      : "No specific food allergies selected.";
+
+    /* ---------- FINAL OUTPUT ---------- */
+    document.getElementById("customResult").innerHTML = `
+      <h3>Your Custom Diet Guidance</h3>
       <ul>
-        <li><strong>Age:</strong> ${age}</li>
-        <li><strong>Goal:</strong> ${goal}</li>
         <li><strong>Diet Preference:</strong> ${diet}</li>
-        <li><strong>Health Consideration:</strong> ${condition}</li>
+        <li><strong>Goal:</strong> ${goal}</li>
+        <li><strong>Activity Level:</strong> ${activity}</li>
+        <li><strong>Allergies:</strong> ${allergyNote}</li>
       </ul>
-      <p>
-        Focus on balanced meals, regular eating habits, and staying hydrated.
-        Adjust food choices based on your preferences and lifestyle.
-      </p>
-      <p><strong>Note:</strong> This is general guidance and not medical advice.</p>
+
+      <p><strong>Age-based advice:</strong> ${ageAdvice}</p>
+      <p><strong>Goal-based advice:</strong> ${goalAdvice}</p>
+      <p><strong>Activity-based advice:</strong> ${activityAdvice}</p>
+      <p><strong>Health note:</strong> ${healthNote || "None"}</p>
+
+      <p><strong>Note:</strong> This is general nutrition guidance and not medical advice.</p>
     `;
   });
 }
